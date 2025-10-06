@@ -22,6 +22,8 @@ header {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #000;
+
+  position: relative; /* allows absolute positioning inside */
 }
 
 .logo {
@@ -158,6 +160,20 @@ button {
 }
 
 button:hover {
+  background-color: #222;
+}
+
+.logout-header-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 36px;
+  background-color: #c4beb3;
+  color: #000;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-header-btn:hover {
   background-color: #222;
 }
 
