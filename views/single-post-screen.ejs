@@ -1,0 +1,52 @@
+<%- include('includes/header') %>
+
+<!-- header ends here -->
+
+<div class="container py-md-5 container--narrow">
+  <!-- flash messages begin -->
+  <%- include('includes/flash')%>
+  <!-- flash messages end -->
+
+  <div class="d-flex justify-content-between">
+    <h2><b>Title: </b><%= post.title %></h2>
+
+    <!-- TODO: USE THIS isVisitorOwner PROPERTY WHERE NEEDED ELSEWHERE, LIKE FOR ADMIN-ONLY STUFF -->
+    <% if (post.isVisitorOwner) { %>
+    <!-- only show edit / delete or whatever else if the visitor is also the owner of the content -->
+    <span class="pt-2">
+      <a href="/post/<%= post._id %>/edit" class="text-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+      <form class="delete-post-form d-inline" action="/post/<%= post._id %>/delete" method="POST">
+        <button class="delete-post-button text-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
+      </form>
+    </span>
+    <% } %>
+  </div>
+
+  <p class="text-muted small mb-4">
+    <a href="#"><img class="avatar-tiny" src="<%= post.createdBy.avatar %>" /></a>
+    Posted by <a href="/profile/<%= post.createdBy.username %>"><%= post.createdBy.username %></a> on <%= post.createdDate.getMonth() +1 %>/<%= post.createdDate.getDate() %>/<%= post.createdDate.getFullYear() %>
+  </p>
+  <div class="body-content">
+    <b>Custom Field 0:</b>
+    <%= post.customField0 %>
+  </div>
+
+  <div class="body-content">
+    <b>Custom Field 1:</b>
+    <%= post.customField1 %>
+  </div>
+
+  <div class="body-content">
+    <b>Custom Field 2:</b>
+    <%= post.customField2 %>
+  </div>
+
+  <div class="body-content">
+    <b>Body:</b>
+    <%= post.body %>
+  </div>
+</div>
+
+<!-- footer begins -->
+
+<%- include('includes/footer') %>

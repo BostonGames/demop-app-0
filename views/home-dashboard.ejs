@@ -1,0 +1,34 @@
+<%- include('includes/header0') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="welcome-title-box title-box">
+        <div class="speech-bubble">
+          <h4>Welcome to Sherwood Forest, <strong><%= user.username %></strong>.</h4>
+        </div>
+        <br /><br />
+        <button type="button" class="login-btn" onclick="window.location.href='/profile/<%= user.username%>'">My Account</button>
+      </div>
+
+      <!-- ✅ NEW IMAGE BOX -->
+      <div class="image-box-LEFT">
+        <img src="https://iili.io/KV4whtn.png" />
+      </div>
+      <div class="image-box-RIGHT">
+        <img src="https://iili.io/KV4wgA7.png" />
+      </div>
+      <div class="image-box-TOP">
+        <img src="https://iili.io/KV4NzVs.png" />
+      </div>
+      <div class="image-box-BOTTOM">
+        <img src="https://iili.io/KV4NV0x.png" />
+      </div>
+    </div>
+
+    <!-- footer begins -->
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

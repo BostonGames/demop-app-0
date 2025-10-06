@@ -1,0 +1,140 @@
+<%- include('includes/header0') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="welcome-title-box">
+        
+         
+
+            <div class="speech-bubble">
+          <h4>Do you fall under the technical definition of "Accredited Investor" in California? If not, dont worry! the vast majority of us are not. 
+            This quesitonairre is meant to be for educational and entertainment purposes only. ALWAYS consult a financial professional
+            before making any major investment decisions. 
+          </h4>
+        </div> 
+        
+          <br><br><br>
+          <h2>Are You an Accredited Investor?</h2>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="flex-wrapper">
+      <div class="form-container-questionnaire">
+        <form>
+          <!-- Question 1 -->
+          <div class="radio-group">
+            <label class="radio-label">Are you a resident of CA?</label>
+            <div class="radio-options">
+              <label><input type="radio" name="ca-residence-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="ca-residence-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="radio-group">
+            <label class="radio-label">Net Worth, minus the value of your primary residence (select one):</label>
+            <div class="radio-options">
+              <label><input type="radio" name="net-worth-question" value="5m-plus" required /> $5,000,000 or more</label>
+              <label><input type="radio" name="net-worth-question" value="1-5m" required /> $1,000,000-$5,000,000</label>
+              <label><input type="radio" name="net-worth-question" value="less-than-1m" required /> Less than $1,000,000</label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="radio-group">
+            <label class="radio-label">Are you an individual or married person?</label>
+            <div class="radio-options">
+              <label><input type="radio" name="individual-or-married-question" value="individual" required /> Individual</label>
+              <label><input type="radio" name="individual-or-married-question" value="married" required /> Married</label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="radio-group">
+            <label class="radio-label">Gross income for each of the last 2 years (select one):</label>
+            <div class="radio-options">
+              <label><input type="radio" name="gross-income-question" value="300k-plus" required /> $300,000 or more</label>
+              <label><input type="radio" name="gross-income-question" value="200-300k" required /> $200,000 - $300,000</label>
+              <label><input type="radio" name="gross-income-question" value="less-than-200k" required /> Less than $200,000</label>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="radio-group">
+            <label class="radio-label">Is this income amount combined with that of your spouse?</label>
+            <div class="radio-options">
+              <label><input type="radio" name="combined-income-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="combined-income-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="radio-group">
+            <label class="radio-label">Do you expect to reach the same level of income in the current year?</label>
+            <div class="radio-options">
+              <label><input type="radio" name="expected-income-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="expected-income-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="radio-group">
+            <label class="radio-label">In connection with your investment activities, you utilize the services of the following: an attorney, accountant, or other advisor to assist in analyzing investment opportunities.</label>
+            <div class="radio-options">
+              <label><input type="radio" name="investment-counsel-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="investment-counsel-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="radio-group">
+            <label class="radio-label">You are an “accredited investor” as defined in Rule 501(a) of SEC Regulation D.</label>
+            <div class="radio-options">
+              <label><input type="radio" name="sec-defined-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="sec-defined-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 9 -->
+          <div class="radio-group">
+            <label class="radio-label">You, together with my advisors, have the knowledge and experience to evaluate the risks and potential benefits of investments requiring Accredited Investor status.</label>
+            <div class="radio-options">
+              <label><input type="radio" name="knowledge-covered-question" value="yes" required /> Yes</label>
+              <label><input type="radio" name="knowledge-covered-question" value="no" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Question 10 -->
+          <div class="input-group">
+            <label for="business-or-occupation"><small>Business or occupation (including title):</small></label>
+            <input name="business-or-occupation" id="business-or-occupation" type="text" placeholder="Enter here" required />
+          </div>
+
+          <!-- Question 11 -->
+          <div class="input-group">
+            <label for="educational-background"><small>Educational background (level, degrees completed):</small></label>
+            <input name="educational-background" id="educational-background" type="text" placeholder="Enter here" required />
+          </div>
+
+          <!-- Question 12 -->
+          <div class="input-group">
+            <label for="age"><small>Age:</small></label>
+            <input name="age" id="age" type="text" placeholder="Enter here" required />
+          </div>
+
+          <!-- Question 13 -->
+          <div class="input-group">
+            <label for="dependents"><small>Number of Dependents:</small></label>
+            <input name="dependents" id="dependents" type="text" placeholder="Enter here" required />
+          </div>
+
+          <button type="submit" class="login-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

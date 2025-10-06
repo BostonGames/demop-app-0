@@ -1,0 +1,43 @@
+<%- include('includes/header0') %>
+
+<!-- header ends here -->
+
+    <div class="content-wrapper">
+      <!-- Title -->
+      <div class="flex-wrapper">
+        <div class="title-box">
+          <h2><%= user.username %>'s ACCOUNT</h2>
+        </div>
+      </div>
+
+      <!-- Profile Fields -->
+      <div class="flex-wrapper">
+        <div class="form-container">
+          <div class="display-field">
+            <span class="label">First Name:</span>
+            <span class="value"><%= user.firstName %></span>
+          </div>
+
+          <div class="display-field">
+            <span class="label">Last Name:</span>
+            <span class="value"><%= user.lastName %></span>
+          </div>
+
+          <div class="display-field">
+            <span class="label">Email:</span>
+            <span class="value"><%= user.email %></span>
+          </div>
+
+          <br /><br />
+
+          <!-- Go Back Button -->
+          <button type="button" class="login-btn" onclick="window.history.back();">Go Back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer begins -->
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

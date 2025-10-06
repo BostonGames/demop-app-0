@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/main1.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://iili.io/KV8xAiP.png" alt="MyApp Logo" style="height: 130px" />
+      </div>
+    </header>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="title-box">
+        <h2>SILVER OAK</h2>
+        <p>FINANCIAL MANAGEMENT ∙ BUSINESS CONSULTING ∙ FINANCIAL ADVICE</p>
+      </div>
+    </div>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <!-- ✅ EXISTING FORM CONTAINER -->
+      <div class="form-container">
+        <h2>CONTACT US</h2>
+        <form action="/contact" method="POST">
+          <!-- flash messages begin -->
+          <%- include('includes/flash')%>
+          <!-- flash messages end -->
+
+          <input name="emailContact" id="email-contact" type="email" placeholder="Email" />
+          <input name="firstName" id="fullName" type="text" placeholder="First Name" />
+          <input name="lastName" id="fullName" type="text" placeholder="Last Name" />
+
+          <select name="topic" id="topic">
+            <option value="" disabled selected>Select Topic</option>
+            <option value="financialPlanning">Financial Planning</option>
+            <option value="businessConsulting">Business Consulting</option>
+            <option value="trustDrafting">Trust Drafting</option>
+            <option value="assetManagement">Asset Management</option>
+            <option value="other">Other</option>
+          </select>
+
+          <input name="contactSource" id="contact-source" type="text" placeholder="How you heard of us" />
+          <textarea name="contactMessage" id="contact-message" placeholder="How can we help you?"></textarea>
+          <div class="button-group">
+            <button type="submit" class="login-btn">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer begins -->
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

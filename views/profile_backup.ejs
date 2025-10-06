@@ -1,0 +1,39 @@
+<%- include('includes/header') %>
+
+<!-- header ends here -->
+
+<div class="container py-md-5 container--narrow">
+  <!-- flash messages begin -->
+  <%- include('includes/flash')%>
+  <!-- flash messages end -->
+
+  <h2>
+    <!-- TODO profileImage: change this into something functional later src="<percentSign profileAvatar percentSign>"-->
+    <img class="avatar-small" src="ahttps://i0.wp.com/www.southsideblooms.com/wp-content/uploads/2022/12/blue.jpeg?fit=1536%2C1536&ssl=1" /> <% profileUsername %>
+    <form class="ml-2 d-inline" action="#" method="POST">
+      <!-- TODO fix this it comes up as the visitors name when visiting the CreatedBy's profile-->
+      <%= user.username %>
+      <button class="btn btn-primary btn-sm">Follow <i class="fas fa-user-plus"></i></button>
+      <!-- <button class="btn btn-danger btn-sm">Stop Following <i class="fas fa-user-times"></i></button> -->
+    </form>
+  </h2>
+
+  <div class="profile-nav nav nav-tabs pt-2 mb-4">
+    <a href="#" class="profile-nav-link nav-item nav-link active">Posts: 3</a>
+    <a href="#" class="profile-nav-link nav-item nav-link">Followers: 3</a>
+    <a href="#" class="profile-nav-link nav-item nav-link">Following: 2</a>
+  </div>
+
+  <div class="list-group">
+    <% posts.forEach(function(post){ %>
+    <a href="/post/<%= post._id %>" class="list-group-item list-group-item-action">
+      <img class="avatar-tiny" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx4p9YilNvwDPVG38l1onST4asAMvV_kGalw&s" />
+      <strong><%= post.title %></strong> on <%= post.createdDate.getMonth() +1 %>/<%= post.createdDate.getDate() %>/<%= post.createdDate.getFullYear() %>
+    </a>
+    <% })%>
+  </div>
+</div>
+
+<!-- footer begins -->
+
+<%- include('includes/footer') %>

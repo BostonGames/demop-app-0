@@ -1,0 +1,41 @@
+<%- include('includes/header') %>
+
+<!-- header ends here -->
+
+<!-- THIS WILL BE WHERE THE USER ENTERS DATA FOR FINANCIAL STUFF ABOUT THEIR ACCOUNT LIKE KYC -->
+
+<div class="container py-md-5 container--narrow">
+  <!-- NOTE: We used create-post in the header as well, but that is a 
+   "get" request. This is a post request and is treated separately 
+   by the server from the Get request -->
+  <form action="/create-post" method="POST">
+    <div class="form-group">
+      <label for="post-title" class="text-muted mb-1"><small>Title</small></label>
+      <input required name="title" id="post-title" class="form-control form-control-lg form-control-title" type="text" placeholder="" autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="post-customField0" class="text-muted mb-1"><small>Custom Field 0</small></label>
+      <input required name="customField0" id="post-customField0" class="form-control form-control-lg form-control" type="text" placeholder="" autocomplete="off" />
+    </div>
+    <div class="form-group">
+      <label for="post-customField1" class="text-muted mb-1"><small>Custom Field 1</small></label>
+      <input required name="customField1" id="post-customField1" class="form-control form-control-lg form-control" type="text" placeholder="" autocomplete="off" />
+    </div>
+    <div class="form-group">
+      <label for="post-customField2" class="text-muted mb-1"><small>Custom Field 2</small></label>
+      <input required name="customField2" id="post-customField2" class="form-control form-control-lg form-control" type="text" placeholder="" autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="post-body" class="text-muted mb-1"><small>Body Content</small></label>
+      <textarea required name="body" id="post-body" class="body-content tall-textarea form-control" type="text"></textarea>
+    </div>
+
+    <button class="btn btn-primary">Save New Post</button>
+  </form>
+</div>
+
+<!-- footer begins -->
+
+<%- include('includes/footer') %>

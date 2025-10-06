@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/main1.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://iili.io/KV8xAiP.png" alt="MyApp Logo" style="height: 130px" />
+      </div>
+    </header>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="title-box">
+        <h2>SILVER OAK</h2>
+        <p>FINANCIAL MANAGEMENT ∙ BUSINESS CONSULTING ∙ FINANCIAL ADVICE</p>
+      </div>
+    </div>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <!-- ✅ EXISTING FORM CONTAINER -->
+      <div class="form-container">
+        <form>
+          <p>Message Sent.</p>
+          <br /><button type="submit" class="login-btn" onclick="window.history.back();">Go Back</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <!-- footer begins -->
+
+  <%- include('includes/footer') %>
+</html>

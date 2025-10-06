@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Phonic:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/main0.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo logo-container">
+        <img src="https://iili.io/KVSeG6l.png" alt="MyApp Logo" style="height: 130px" />
+      </div>
+
+      <!-- THIS WILL MAKE THE HEADER SHOW UP CORRECTLY FOR IF THE USER IS LOGGED IN OR OUT-->
+      <!-- If the user is logged in, then the 'user' object will show up as True, if not, then False and will default to 'else'-->
+      <% if(user){ %>
+      <form action="/logout" method="POST">
+        <button class="logout-header-btn" onclick="window.location.href='/logout'">Log Out</button>
+      </form>
+      <% }else{ %>
+
+      <!-- for when no one is logged in -->
+
+      <% } %>
+    </header>
+  </body>
+</html>

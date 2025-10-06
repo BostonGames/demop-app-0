@@ -1,0 +1,46 @@
+<%- include('includes/header0') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="title-box">
+        <h2>SILVER OAK</h2>
+      </div>
+
+
+    </div>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <!-- ✅ EXISTING FORM CONTAINER -->
+      <div class="form-container">
+
+      <!-- flash messages begin -->
+      <%- include('includes/flash')%>
+      <!-- flash messages end -->
+       
+        <form action="/login" method="POST">
+          <input name="username" type="username" placeholder="Username" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <div class="button-group">
+            <button type="submit" class="login-btn">Log In</button></form>
+            <button type="button" class="signup-btn" onclick="window.location.href='/register'">Sign Up</button>
+          </div>
+        
+      </div>
+
+      <!-- ✅ NEW INFO BOX -->
+      <div class="info-box">
+        <h2>Join Us</h2>
+        <p>
+          Our goal is to bring the financial knowledge of the 1% to everyone. Let's level the playing field - join us today! <br /><br />
+          Interested in our advisory services? <a href="/contact">Contact us here.</a>
+        </p>
+      </div>
+    </div>
+
+    
+    <!-- footer begins -->
+
+<%- include('includes/footer') %>

@@ -1,0 +1,557 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #00cb00;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global Link Styling */
+.flex-wrapper a {
+  color: #00cb00; /* signature neon green */
+  text-decoration: none; /* clearly looks like a link */
+  text-shadow: 0 0 5px #00ff00; /* subtle glow effect */
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.flex-wrapper a:hover {
+  color: #fff; /* slightly brighter on hover */
+  text-decoration: none;
+  text-shadow: 0 0 5px #fff; /* subtle glow effect */
+}
+
+header {
+  background-color: #000;
+  padding: 2rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #00cb00;
+
+  min-height: 100px;
+  max-height: 100px; /* limit header height */
+  position: relative; /* allows absolute positioning inside */
+  overflow: visible; /* allow logo to overflow outside */
+  margin-bottom: 50px; /* allow logo to overflow to not overlap body content */
+}
+
+header .logo img {
+  height: 150px; /* taller than header max-height */
+  display: block;
+  margin-bottom: -50px; /* negative margin to overlap bottom */
+  z-index: 1; /* optional, above header */
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00cb00;
+  text-align: center;
+}
+
+/* ✅ NEW WRAPPER TO HOLD BOTH DIVS */
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .flex-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .info-box,
+  .image-box {
+    order: 1;
+  }
+  .form-container {
+    order: 2;
+  }
+}
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.form-container-questionnaire {
+  max-width: 760px;
+  width: 100%;
+  padding-top: 70px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* ✅ TITLE BOX STYLES */
+.title-box,
+.image-box {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.title-box h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* responsive scaling */
+  color: #00cb00;
+}
+.title-box h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ✅ INFO / IMAGE BOX STYLES */
+.info-box,
+.image-box {
+  max-width: 400px;
+  width: 100%;
+  color: #00cb00;
+  padding-top: 70px;
+}
+.image-box {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering if needed */
+}
+
+/* Spacing between image and any captions */
+.image-box img {
+  width: 100%; /* Fill the container width */
+  height: auto; /* Keep aspect ratio */
+  max-width: 100%; /* Prevent overflow */
+  display: block; /* Remove inline spacing below image */
+  margin: 0 auto; /* ✅ centers image inside container */
+}
+
+.image-box p {
+  margin-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* responsive font scaling */
+  color: #00cb00;
+  line-height: 1.4;
+}
+
+.info-box h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="username"],
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #00cb00;
+  border-radius: 8px;
+  background: #000;
+  color: #00cb00;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #00cb00;
+  opacity: 0.7;
+}
+
+/* Stack label and input vertically */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* space between questions */
+}
+
+.input-group label {
+  margin-bottom: 5px; /* space between label and input */
+  font-size: 1.1rem; /* optional: smaller label font */
+}
+
+.input-group input {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Radio button groups */
+.radio-group {
+  display: flex;
+  flex-direction: column; /* stack label on top of options */
+  margin-bottom: 20px; /* space between questions */
+}
+
+.radio-label {
+  margin-bottom: 8px; /* space between question and options */
+  font-size: 1rem;
+}
+
+/* Options container */
+.radio-options {
+  display: flex;
+  flex-wrap: wrap; /* wrap on smaller screens */
+  gap: 15px; /* space between each radio option */
+}
+
+/* Each individual radio option */
+.radio-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between radio button and text */
+  font-size: 1rem;
+}
+
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #00cb00;
+  border-radius: 8px;
+  background: #000;
+  color: #00cb00;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  resize: vertical; /* allow vertical resizing by user */
+  min-height: 250px; /* initial visible height */
+}
+
+textarea::placeholder {
+  color: #00cb00;
+  opacity: 0.7;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.75rem;
+  border-radius: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn {
+  background-color: #00cb00;
+  color: #000;
+  border: none;
+}
+
+/* ✅ Logout Button on Right in HEADER */
+.logout-header-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 0.5rem 1.25rem;
+  border-radius: 36px;
+  background-color: #000;
+  color: #00cb00;
+  border: 2px solid #00cb00;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-header-btn:hover {
+  background-color: #001a00;
+}
+
+.signup-btn {
+  background-color: #000;
+  color: #00cb00;
+  border: 2px solid #00cb00;
+}
+
+.login-btn:hover {
+  background-color: #00b300;
+}
+
+.signup-btn:hover {
+  background-color: #001a00;
+}
+
+/* IMAGES SURROUNDING INFO TEXT */
+
+/* First, hide TOP and BOTTOM by default, show LEFT and RIGHT on desktop */
+.image-box-LEFT,
+.image-box-RIGHT,
+.image-box-TOP,
+.image-box-BOTTOM {
+  max-width: 400px;
+  width: 100%;
+  display: none; /* hide by default */
+}
+
+/* IMAGE BOX styling for centering content */
+.image-box-LEFT img,
+.image-box-RIGHT img,
+.image-box-TOP img,
+.image-box-BOTTOM img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* -------- Desktop Layout -------- */
+@media (min-width: 768px) {
+  .flex-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .welcome-title-box {
+    order: 2; /* center column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* ✅ Center all text inside */
+  }
+
+  .welcome-title-box h2 {
+    font-family: "Press Start 2P", cursive;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* responsive scaling */
+    color: #00cb00;
+  }
+
+  .image-box-LEFT,
+  .image-box-RIGHT {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    max-width: 130px; /* limit width of side images */
+  }
+
+  .image-box-LEFT {
+    order: 1;
+  }
+  .image-box-RIGHT {
+    order: 3;
+  }
+
+  .image-box-LEFT img,
+  .image-box-RIGHT img {
+    height: 120%; /* slightly taller than title box */
+  }
+
+  /* Hide TOP and BOTTOM images on desktop */
+  .image-box-TOP,
+  .image-box-BOTTOM {
+    display: none;
+  }
+}
+
+/* -------- Mobile Layout -------- */
+@media (max-width: 767px) {
+  .flex-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .welcome-title-box {
+    order: 2; /* middle */
+    text-align: center;
+  }
+
+  /* Show TOP and BOTTOM images */
+  .image-box-TOP,
+  .image-box-BOTTOM {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120%; /* slightly wider than title box */
+  }
+
+  .image-box-TOP {
+    order: 1;
+  }
+
+  .image-box-BOTTOM {
+    order: 3;
+  }
+
+  /* Hide LEFT and RIGHT images on mobile */
+  .image-box-LEFT,
+  .image-box-RIGHT {
+    display: none;
+  }
+
+  .image-box-TOP img,
+  .image-box-BOTTOM img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.speech-bubble {
+  position: relative; /* for pseudo-element positioning */
+  background-color: #f0f0f0; /* light off-white/grey inside */
+  border: 2px solid #555555; /* dark grey border */
+  border-radius: 12px; /* rounded corners */
+  padding: 1rem 1.25rem; /* inner spacing */
+  max-width: 300px;
+  color: #000; /* text color */
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+
+  /* ✅ Center the bubble */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Triangle tail using ::after */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 16px solid transparent; /* triangle size */
+  border-top-color: #f0f0f0; /* match bubble background */
+  border-top-width: 16px;
+  border-right-width: 16px;
+
+  bottom: -27px; /* position below the bubble */
+  right: 30px; /* horizontal offset */
+}
+
+/* Optional: border for the tail */
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 13px solid transparent; /* slightly bigger for border effect */
+  border-top-color: #555555; /* match bubble border */
+  border-top-width: 13px;
+  border-right-width: 13px;
+
+  bottom: -13px;
+  right: 19px; /* position behind the tail for border effect */
+  z-index: -1;
+}
+
+/* Flash Message Base */
+.alert {
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 600px;
+  margin: 15px auto;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards, fadeOut 0.5s ease forwards 4s;
+}
+
+/* Error (Danger) Style */
+.alert-danger {
+  background-color: #ffdddd;
+  border: 1px solid #ff8c8c;
+  color: #a33;
+}
+
+/* Success Style */
+.alert-success {
+  background-color: #66c79e;
+  border: 1px solid #00cb00;
+  color: #000;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-out Animation */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+/* FOR THE ACCOUNT PROFILE PAGE */
+.display-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid #00cb00;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #00cb00;
+  font-size: 1rem;
+}
+
+.display-field .label {
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.display-field .value {
+  text-align: right;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #000; /* match body background */
+  color: #888; /* muted light grey for text */
+  font-size: 0.8rem; /* make text small */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #222; /* subtle separation line */
+  margin-top: auto; /* push footer to bottom */
+}
+
+footer a {
+  color: #aaa; /* slightly lighter for links */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #00cb00; /* glow green on hover */
+}
