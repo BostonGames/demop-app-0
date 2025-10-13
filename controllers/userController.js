@@ -39,6 +39,7 @@ exports.login = function (req, res) {
         _id: user.data._id
       }
       req.session.save(function () {
+        req.flash("success", "adviserController: adviser was logged in succesfully")
         res.redirect("/")
       })
     })

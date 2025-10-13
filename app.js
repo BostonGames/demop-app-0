@@ -34,6 +34,7 @@ app.use(function (req, res, next) {
 
   // make user session data available from within View templates
   res.locals.user = req.session.user
+  res.locals.adviserUser = req.session.adviserUser
   next()
 })
 

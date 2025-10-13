@@ -1,0 +1,47 @@
+<%- include('includes/header-tan') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="title-box">
+        <h2>SILVER OAK</h2>
+      </div>
+
+
+    </div>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <!-- ✅ EXISTING FORM CONTAINER -->
+      <div class="form-container">
+
+              <div class="info-box">
+        <h2> ADVISOR LOGIN</h2>
+        <p>
+          Authorized users only.<br><br>
+        </p>
+      </div>
+
+      <!-- flash messages begin -->
+      <%- include('includes/flash')%>
+      <!-- flash messages end -->
+       
+        <form action="/adviser-login" method="POST">
+          <input name="username" type="username" placeholder="Username" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <div class="button-group">
+            <button type="submit" class="dark-btn">Log In</button></form>
+            <button type="button" class="light-btn" onclick="window.location.href='/adviser-register'">Sign Up</button>
+          </div>
+        
+      </div>
+
+      <!-- ✅ NEW INFO BOX -->
+
+    </div>
+
+    
+    <!-- footer begins -->
+
+<%- include('includes/footer') %>

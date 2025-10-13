@@ -56,6 +56,49 @@ header {
   color: #000;
 }
 
+/* ✅ INFO / IMAGE BOX STYLES */
+.info-box,
+.image-box {
+  max-width: 400px;
+  width: 100%;
+  color: #000;
+  padding-top: 70px;
+}
+.image-box {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering if needed */
+}
+
+/* Spacing between image and any captions */
+.image-box img {
+  width: 100%; /* Fill the container width */
+  height: auto; /* Keep aspect ratio */
+  max-width: 100%; /* Prevent overflow */
+  display: block; /* Remove inline spacing below image */
+  margin: 0 auto; /* ✅ centers image inside container */
+}
+
+.image-box p {
+  margin-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* responsive font scaling */
+  color: #000;
+  line-height: 1.4;
+}
+
+.info-box h2 {
+  font-family: "Martina Plantijn", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 /* ------------------ FLEX WRAPPER ------------------ */
 .flex-wrapper {
   display: flex;
@@ -72,6 +115,18 @@ header {
     align-items: flex-start;
     gap: 3rem;
   }
+}
+
+/* Global Link Styling */
+.flex-wrapper a {
+  color: #000; /* signature neon green */
+  text-decoration: underline;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.flex-wrapper a:hover {
+  color: #464646; /* slightly brighter on hover */
+  text-decoration: none;
 }
 
 /* ------------------ FORM CONTAINER ------------------ */
@@ -97,8 +152,7 @@ form {
   gap: 1rem;
 }
 
-input[type="email"],
-input[type="text"],
+input,
 textarea {
   padding: 0.75rem 1rem;
   border: 1px solid #000;
@@ -153,17 +207,21 @@ button {
   border-radius: 36px;
   font-size: 1rem;
   cursor: pointer;
-  border: none;
-  background-color: #000;
-  color: #c4beb3;
+
   transition: background 0.3s ease;
 }
 
-button:hover {
+.dark-btn {
+  border: none;
+  background-color: #000;
+  color: #c4beb3;
+}
+
+.dark-btn:hover {
   background-color: #222;
 }
 
-.logout-header-btn {
+.light-btn {
   padding: 0.5rem 1.25rem;
   border-radius: 36px;
   background-color: #c4beb3;
@@ -173,8 +231,28 @@ button:hover {
   transition: background 0.3s ease;
 }
 
-.logout-header-btn:hover {
+.light-btn:hover {
   background-color: #222;
+}
+
+/* ✅ Logout Button on Right in HEADER */
+.logout-header-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 0.5rem 1.25rem;
+  border-radius: 36px;
+  background-color: #000;
+  color: #c4beb3;
+  border: 2px solid #c4beb3;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-header-btn:hover {
+  background-color: #001a00;
 }
 
 /* ------------------ RESPONSIVE TEXTAREAS ------------------ */

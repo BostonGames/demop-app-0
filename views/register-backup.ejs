@@ -1,0 +1,33 @@
+<%- include('includes/header0') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="title-box">
+        <h2>Sign Up</h2>
+      </div>
+    </div>
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <!-- ✅ EXISTING FORM CONTAINER -->
+      <div class="form-container">
+        <form action="/register" method="POST">
+          <input name="username" id="username-register" type="text" placeholder="Username" required autocomplete="off" />
+          <input name="firstName" id="first-name-register" type="text" placeholder="First Name" required autocomplete="off" />
+          <input name="lastName" id="last-name-register" type="text" placeholder="Last Name" required autocomplete="off" />
+          <input name="email" id="email-register" type="email" placeholder="Email" required autocomplete="off" />
+          <input name="password" id="password-register" type="password" placeholder="Password" required autocomplete="off" />
+          <div class="button-group">
+            <button type="submit" class="login-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer begins -->
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

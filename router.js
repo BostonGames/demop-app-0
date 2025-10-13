@@ -1,9 +1,21 @@
 const express = require("express")
 
 const router = express.Router()
+const adviserController = require("./controllers/adviserController")
 const userController = require("./controllers/userController")
 const postController = require("./controllers/postController")
 const contactController = require("./controllers/contactController")
+
+// ERROR SCREEN
+router.get("/4040", adviserController.viewError404Screen)
+
+// ADVISOR-RELATED ROUTES:
+router.get("/adviser-login", adviserController.viewAdviserLoginScreen)
+router.post("/adviser-login", adviserController.login)
+router.post("/adviser-logout", adviserController.logout)
+router.get("/adviser-register", adviserController.viewAdviserRegisterScreen)
+router.post("/adviser-register", adviserController.adviserRegister)
+router.get("/home-adviser-dashboard", adviserController.home)
 
 // USER-RELATED ROUTES:
 router.get("/", userController.home)

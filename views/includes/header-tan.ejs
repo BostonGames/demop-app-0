@@ -10,8 +10,20 @@
   <body>
     <header>
       <div class="logo logo-container">
-        <img src="https://iili.io/KV8xAiP.png" alt="MyApp Logo" style="height: 130px" />
+        <a href="/adviser-login"><img src="https://iili.io/KV8xAiP.png" alt="MyApp Logo" style="height: 130px" /></a></div></header>
       </div>
+
+      <!-- THIS WILL MAKE THE HEADER SHOW UP CORRECTLY FOR IF THE USER IS LOGGED IN OR OUT-->
+      <!-- If the user is logged in, then the 'user' object will show up as True, if not, then False and will default to 'else'-->
+      <% if(adviserUser){ %>
+      <form action="/adviser-logout" method="POST">
+        <button class="logout-header-btn" onclick="window.location.href='/logout'">Log Out</button>
+      </form>
+      <% }else{ %>
+
+      <!-- for when no one is logged in -->
+
+      <% } %>
     </header>
   </body>
 </html>

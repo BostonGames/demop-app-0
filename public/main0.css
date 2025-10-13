@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 /* Global Link Styling */
 .flex-wrapper a {
   color: #00cb00; /* signature neon green */
-  text-decoration: none; /* clearly looks like a link */
+  text-decoration: none;
   text-shadow: 0 0 5px #00ff00; /* subtle glow effect */
   transition: color 0.2s ease, text-shadow 0.2s ease;
 }
@@ -69,7 +70,7 @@ header .logo img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
   gap: 2rem;
 }
 

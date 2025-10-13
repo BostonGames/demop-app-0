@@ -1,0 +1,23 @@
+<%- include('includes/header-tan') %>
+
+<!-- header ends here -->
+
+    <!-- ✅ NEW FLEX WRAPPER -->
+    <div class="flex-wrapper">
+      <div class="welcome-title-box title-box">
+
+          <!-- flash messages begin -->
+  <%- include('includes/flash')%>
+  <!-- flash messages end -->
+
+        <h2>GREETINGS</h2>
+        <br /><br />
+
+        <div class="speech-bubble">
+          <h4>Welcome to Adviser Dashboard, <strong><%= adviserUser.username %></strong>. <br /><br />You are now part of a movement to bring the wealth building skills of the 1% to us all - check back again soon for updates!</h4>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
